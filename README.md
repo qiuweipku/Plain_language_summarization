@@ -1,5 +1,5 @@
 # Plain Language Summarization
-This repository provides the dataset and models' training details of the novel task of automated generation of lay language summaries of biomedical scientific reviews. Please refer to our AAAI-2021 paper [Automated Lay Language Summarization of Biomedical Scientific Reviews](https://arxiv.org/abs/2012.12573) for more details.
+This repository provides the dataset and model training details of the novel task of automated generation of lay language summaries of biomedical scientific reviews. Please refer to our AAAI-2021 paper [Automated Lay Language Summarization of Biomedical Scientific Reviews](https://arxiv.org/abs/2012.12573) for more details.
 
 ## Installation
 Run
@@ -35,8 +35,38 @@ Download the the PMC articles dataset from [here](https://www.kaggle.com/cvltmao
 ### BART
 For BART model, we use the [Fairseq BART](https://github.com/pytorch/fairseq) implementation. Below list the hyperparameters for training BART on the CDSR data.
 ```
-
+TOTAL_NUM_UPDATES=50000
+WARMUP_UPDATES=500
+LR=3e-05
+MAX_TOKENS=2048
+UPDATE_FREQ=32
+max-tokens=2048
+required-batch-size-multiple=1
+arch=bart_large
+criterion=label_smoothed_cross_entropy
+label-smoothing=0.1
+dropout=0.1
+attention-dropout=0.1
+weight-decay=0.01
+optimizer=adam
+adam-betas=(0.9, 0.999)
+adam-eps=1e-08
+clip-norm=0.1
+lr-scheduler=polynomial_decay
+lr=3e-05
+total-num-update=50000
+warmup-updates=500
+update-freq=32
 ```
+Below list the hyperparameters for testing BART on the CDSR data.
+```
+beam=4
+lenpen=2.0
+max_len_b=1000
+min_len=300
+no_repeat_ngram_size=3
+```
+
 ### BERT extractive
 For BERT extractive model, we use the [presumm](https://github.com/nlpyang/presumm) implementation. Below list the hyperparameters for training BERT extractive on the CDSR data.
 ```
@@ -58,6 +88,7 @@ alpha=0.95
 min_length=100
 ```
 Other hyperparameters are set to default values.
+
 ### Pointer-generator 
 For pointer-generator  model, we use the [neural-summ-cnndm-pytorch](https://github.com/lipiji/neural-summ-cnndm-pytorch/) implementation. Below list the hyperparameters for training Pointer-generator on the CDSR data.
 ```
@@ -79,7 +110,6 @@ REMOVES_PUNCTION=False
 Other hyperparameters are set to default values.
 
 ## Citation
-
 For now, cite [the Arxiv paper](https://arxiv.org/abs/2012.12573):
 
 ```
