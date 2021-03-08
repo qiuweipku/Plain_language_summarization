@@ -14,14 +14,14 @@ Please follow the following steps to generate the CDSR dataset:
 1. Click on the following link https://www.cochranelibrary.com/cdsr/reviews
 2. Click the "Select all" button and then click "Export selected citation(s)"
 3. Select "Include abstract", then save the file as "citation-export.txt".
-4. Move "citation-export.txt" to 'CDSR_data/'
-5. run
+4. Move "citation-export.txt" to './CDSR_data/'
+5. Run
 ```
 cd ./CDSR_data/
 python run_preprocessing.py
 ```
 
-The preprocessed CDSR dataset will be saved in ./CDSR_data/CDSR/. The "xxx.source" files include the abstracts. The "xxx.target" files include the plain language summarizations.
+The preprocessed CDSR dataset will be saved in "./CDSR_data/CDSR/". The "xxx.source" files include the abstracts. The "xxx.target" files include the plain language summarizations.
 
 Note that some articals may be removed from the Cochrane Library when the database is updated, so the preprocessed dataset may include less samples than the data we used in our work. 
 
