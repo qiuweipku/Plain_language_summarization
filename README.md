@@ -67,7 +67,7 @@ MAX_LEN_X=1000
 MAX_LEN_Y=700
 BATCH_SIZE =4
 ```
-Below list the hyperparameters for testing BERT extractive on the CDSR data.
+Below list the hyperparameters for testing Pointer-generator on the CDSR data.
 ```
 IS_UNICODE=False
 BATCH_SIZE=16
