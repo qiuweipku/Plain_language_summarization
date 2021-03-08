@@ -40,41 +40,41 @@ For BART model, we use the [Fairseq BART](https://github.com/pytorch/fairseq) im
 ### BERT extractive
 For BERT extractive model, we use the [presumm](https://github.com/nlpyang/presumm) implementation. Below list the hyperparameters for training BERT extractive on the CDSR data.
 ```
-ext_dropout = 0.1
-lr = 2e-3
-batch_size = 140
-train_steps = 50000
-accum_count = 2
-use_interval = true
-warmup_steps = 10000
-max_pos = 512
+ext_dropout=0.1
+lr=2e-3
+batch_size=140
+train_steps=50000
+accum_count=2
+use_interval=true
+warmup_steps=10000
+max_pos=512
 ```
 Below list the hyperparameters for testing BERT extractive on the CDSR data.
 ```
-use_interval = true
-max_pos = 512
-max_length = 700
-alpha = 0.95
-min_length = 100
+use_interval=true
+max_pos=512
+max_length=700
+alpha=0.95
+min_length=100
 ```
 Other hyperparameters are set to default values.
 ### Pointer-generator 
 For pointer-generator  model, we use the [neural-summ-cnndm-pytorch](https://github.com/lipiji/neural-summ-cnndm-pytorch/) implementation. Below list the hyperparameters for training Pointer-generator on the CDSR data.
 ```
-MIN_LEN_X = 300
-MIN_LEN_Y = 100
-MAX_LEN_X = 1000
-MAX_LEN_Y = 700
-BATCH_SIZE = 4
+MIN_LEN_X=300
+MIN_LEN_Y=100
+MAX_LEN_X=1000
+MAX_LEN_Y=700
+BATCH_SIZE =4
 ```
 Below list the hyperparameters for testing BERT extractive on the CDSR data.
 ```
-IS_UNICODE = False
-BATCH_SIZE = 16
-MIN_LEN_PREDICT = 100
-MAX_LEN_PREDICT = 700
-MAX_BYTE_PREDICT = None
-REMOVES_PUNCTION = False
+IS_UNICODE=False
+BATCH_SIZE=16
+MIN_LEN_PREDICT=100
+MAX_LEN_PREDICT=700
+MAX_BYTE_PREDICT=None
+REMOVES_PUNCTION=False
 ```
 Other hyperparameters are set to default values.
 
