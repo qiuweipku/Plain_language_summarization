@@ -33,7 +33,7 @@ Download the the PMC articles dataset from [here](https://www.kaggle.com/cvltmao
 
 ## Model
 ### BART
-For BART model, we use the [Fairseq BART](https://github.com/pytorch/fairseq) implementation. Below list the hyperparameters for training BART on the CDSR data.
+For BART model, we use the [Fairseq BART](https://github.com/pytorch/fairseq/tree/master/examples/bart) implementation. Below list the hyperparameters for training BART on the CDSR data.
 ```
 TOTAL_NUM_UPDATES=50000
 WARMUP_UPDATES=500
