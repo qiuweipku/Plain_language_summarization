@@ -1,5 +1,5 @@
 # Plain Language Summarization
-This repository provides the dataset and models' training details of the novel task of automated generation of lay language summaries of biomedical scientific reviews. Please refer to our paper [Automated Lay Language Summarization of Biomedical Scientific Reviews](https://arxiv.org/abs/2012.12573) for more details.
+This repository provides the dataset and models' training details of the novel task of automated generation of lay language summaries of biomedical scientific reviews. Please refer to our AAAI-2021 paper [Automated Lay Language Summarization of Biomedical Scientific Reviews](https://arxiv.org/abs/2012.12573) for more details.
 
 ## Installation
 Run
@@ -91,7 +91,6 @@ For now, cite [the Arxiv paper](https://arxiv.org/abs/2012.12573):
 }
 ```
 
-If we submit the paper to a conference or journal, we will update the BibTeX.
 
 ## Contact information
 
