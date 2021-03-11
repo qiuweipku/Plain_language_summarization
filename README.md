@@ -14,7 +14,7 @@ Please follow the following steps to generate the CDSR dataset:
 1. Click on the following link https://www.cochranelibrary.com/cdsr/reviews
 2. Click the "Select all" button and then click "Export selected citation(s)"
 3. Select "Include abstract", then save the file as "citation-export.txt".
-4. Move "citation-export.txt" to './CDSR_data/'
+4. Move "citation-export.txt" to "./CDSR_data/"
 5. Run
 ```
 cd ./CDSR_data/
@@ -29,11 +29,19 @@ Note that some articals may be removed from the Cochrane Library when the databa
 Follow the instructions [here](https://github.com/abisee/cnn-dailymail) to download the original CNN and Daily Mail datasets.
 
 ### PubMed abstracts
-Download the the PMC articles dataset from [here](https://www.kaggle.com/cvltmao/pmc-articles)
+Follow the following steps to transform the Pubmed dataset.
+1. Download the PMC articles dataset from [here](https://www.kaggle.com/cvltmao/pmc-articles), save the file in "./Pubmed_data/"
+2. Run
+```
+cd ./Pubmed_data/
+python pubmed_preprocessing.py
+```
+The transformed (transformation including text substitution and sentenceshuffling) abstracts and orginal abstracts will be saved in ""preprocessed CDSR dataset will be saved in "./pubmed_transformed/". In our paper, we used a small set of samples incuding 300,000 training samples and 13,000 validation samples for pretraining. The extracted small set will be saved in "./pubmed_preprocessed/". The "xxx.source" files include the original abstracts. The "xxx.target" files include the transformed abstracts.
 
 ## Model
 ### BART
-For BART model, we use the [Fairseq BART](https://github.com/pytorch/fairseq/tree/master/examples/bart) implementation. Below list the hyperparameters for training BART on the CDSR data.
+For BART model, we use the [Fairseq BART](https://github.com/pytorch/fairseq/tree/master/examples/bart) implementation. Download the BART model pretrained on CNN/DM dataset from [here](https://dl.fbaipublicfiles.com/fairseq/models/bart.large.cnn.tar.gz).
+Below list the hyperparameters for training BART on Pubmed data the CDSR data.
 ```
 TOTAL_NUM_UPDATES=50000
 WARMUP_UPDATES=500
