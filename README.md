@@ -117,6 +117,15 @@ REMOVES_PUNCTION=False
 ```
 Other hyperparameters are set to default values.
 
+### Oracle extractive
+Run
+```
+cd ./CDSR_data/
+python oracle_extractive.py
+```
+The generated abstracts for test set will be saved in "./test_oracle_extractive.txt/".
+
+
 ## Citation
 For now, cite [the Arxiv paper](https://arxiv.org/abs/2012.12573):
 
