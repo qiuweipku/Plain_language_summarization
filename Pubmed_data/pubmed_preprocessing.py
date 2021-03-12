@@ -7,6 +7,8 @@ import numpy as np
 import random
 import warnings
 import csv
+import time
+import os
 warnings.filterwarnings('ignore')
 
 print('Start preprocessing Pubmed dataset')
@@ -20,6 +22,8 @@ def masking(sent):
     
     while mask_word_num < 0.35*sent_len:
         mask_len = np.random.poisson(lam=3.0)
+        if mask_len > len(index):
+            break
         anchor = np.random.choice(index, 1)[0]
         for i in range(mask_len):
             if (anchor+i < sent_len) & (anchor+1 in index) & (mask_word_num < 0.35*sent_len):
@@ -49,7 +53,7 @@ if not os.path.isdir('./pubmed_preprocessed/'):
 transformed_abstract = open("./pubmed_transformed/transformed_abstract.txt","w")
 original_abstract = open("./pubmed_transformed/original_abstract.txt","w")
 
-file_list = ['./a_b.csv', './c_h.csv', './i_n.csv', './o_z.csv']
+file_list = ['a_b.csv', 'c_h.csv', 'i_n.csv', 'o_z.csv']
 for file_name in file_list:
     print(file_name)
     num = 0
@@ -80,6 +84,8 @@ for file_name in file_list:
             if num % 10000 == 0:
                 original_abstract.flush()
                 transformed_abstract.flush()
+                print(num)
+
 original_abstract.close()
 transformed_abstract.close()
 
