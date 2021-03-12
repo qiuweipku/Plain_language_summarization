@@ -41,7 +41,7 @@ The transformed (transformation including text substitution and sentenceshufflin
 ## Model
 ### BART
 For BART model, we use the [Fairseq BART](https://github.com/pytorch/fairseq/tree/master/examples/bart) implementation. Download the BART model pretrained on CNN/DM dataset from [here](https://dl.fbaipublicfiles.com/fairseq/models/bart.large.cnn.tar.gz).
-Below list the hyperparameters for training BART on Pubmed data the CDSR data.
+Follow the instructions [here](https://github.com/pytorch/fairseq/blob/master/examples/bart/README.summarization.md) to finetune BART model on Pubmed and CDSR data. Below list the hyperparameters for training BART on Pubmed data the CDSR data.
 ```
 TOTAL_NUM_UPDATES=50000
 WARMUP_UPDATES=500
